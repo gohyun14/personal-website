@@ -251,44 +251,41 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Spencer Sharp - Software designer, founder, and amateur astronaut
+          Gabriel Hyun - Software engineer, gamer, and finance enthusiast
         </title>
         <meta
           name="description"
-          content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="I’m Gabe, a software engineer based in Silicon Valley. I'm currently unemployed and working on my own projects. In my spare time I enjoy listening to finance and technology podcasts as well as playing videogames with friends!"
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+            Software engineer, gamer, and finance enthusiast
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I&apos;m Gabe, a software engineer based in Silicon Valley. I&apos;m
+            currently looking for work and working on my own personal projects.
+            In my spare time I enjoy listening to finance and technology
+            podcasts as well as playing videogames with friends!
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
+            {/* <SocialLink
               href="https://instagram.com"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
-            />
+            /> */}
             <SocialLink
-              href="https://github.com"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/gabrielhyun/"
+              target="_blank"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+            />
+            <SocialLink
+              href="https://github.com/gohyun14/"
+              target="_blank"
+              aria-label="Follow on GitHub"
+              icon={GitHubIcon}
             />
           </div>
         </div>
@@ -302,7 +299,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            {/* <Newsletter /> */}
             <Resume />
           </div>
         </div>
