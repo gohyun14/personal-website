@@ -58,14 +58,14 @@ function LinkIcon(props) {
   )
 }
 
-export default function Projects() {
+export default function Favorites() {
   return (
     <>
       <Head>
-        <title>Projects - Gabriel Hyun</title>
+        <title>Favorites - Gabriel Hyun</title>
         <meta
           name="description"
-          content="Projects I've created on my web dev journey."
+          content="."
         />
       </Head>
       <SimpleLayout

@@ -12,17 +12,19 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image1 from '@/images/photos/image-1.jpeg'
+import image2 from '@/images/photos/image-2.jpeg'
+import image3 from '@/images/photos/image-3.jpeg'
+import image4 from '@/images/photos/image-4.jpeg'
+import image5 from '@/images/photos/image-5.jpeg'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
-import { generateRssFeed } from '@/lib/generateRssFeed'
-import { getAllArticles } from '@/lib/getAllArticles'
+import logoAutomation from '@/images/logos/automation-logo.png'
+import logoCP from '@/images/logos/cp-logo.png'
+// import { generateRssFeed } from '@/lib/generateRssFeed'
+// import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
 
 function MailIcon(props) {
@@ -71,11 +73,11 @@ function BriefcaseIcon(props) {
   )
 }
 
-function ArrowDownIcon(props) {
+function ChevronRightIcon(props) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
-        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
+        d="M6.75 5.75 9.25 8l-2.5 2.25"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -84,17 +86,15 @@ function ArrowDownIcon(props) {
   )
 }
 
-function Article({ article }) {
+function PagePreview({ link, title, description, header }) {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
+      <Card.Title href={`${link}`}>{title}</Card.Title>
+      <Card.Eyebrow as="p" decorate>
+        {header}
       </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      <Card.Description>{description}</Card.Description>
+      <Card.Cta>Read more</Card.Cta>
     </Card>
   )
 }
@@ -139,35 +139,32 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
+      company: 'Automation Anywhere',
+      title: 'SWE Intern (Frontend)',
+      logo: logoAutomation,
+      start: 'Jun 2022',
+      end: 'Dec 2022',
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      company: 'Automation Anywhere',
+      title: 'SWE Intern (Frontend)',
+      logo: logoAutomation,
+      start: 'Jun 2021',
+      end: 'Dec 2021',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      company: 'Cal Poly San Luis Obispo',
+      title: 'SWE Research Assistant',
+      logo: logoCP,
+      start: 'Jan 2020',
+      end: 'Jan 2021',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Automation Anywhere',
+      title: 'SWE Intern (Frontend)',
+      logo: logoAutomation,
+      start: 'Jun 2020',
+      end: 'Sept 2020',
     },
   ]
 
@@ -211,9 +208,9 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+      <Button href="/resume" variant="secondary" className="group mt-6 w-full">
+        Read more
+        <ChevronRightIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
   )
@@ -251,23 +248,25 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Gabriel Hyun - Software engineer, gamer, and finance enthusiast
+          Gabriel Hyun - Software engineer, gamer, foodie, and podcast
+          enthusiast
         </title>
         <meta
           name="description"
-          content="I’m Gabe, a software engineer based in Silicon Valley. I'm currently unemployed and working on my own projects. In my spare time I enjoy listening to finance and technology podcasts as well as playing videogames with friends!"
+          content="I’m Gabe, a software engineer focusing on web development based in Silicon Valley. I'm currently looking for work and working on my own projects. In my spare time I enjoy listening to finance and technology podcasts as well as playing videogames with friends!"
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software engineer, gamer, and finance enthusiast
+            Software engineer, gamer, foodie, and podcast enthusiast
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Gabe, a software engineer based in Silicon Valley. I&apos;m
-            currently looking for work and working on my own personal projects.
-            In my spare time I enjoy listening to finance and technology
-            podcasts as well as playing videogames with friends!
+            I&apos;m Gabe, a software enginee focusing in web development based
+            in Silicon Valley. I&apos;m currently looking for work and working
+            on my own personal projects. In my spare time I enjoy exercising,
+            traveling, eating, listening to podcasts about technology and
+            finance, and playing videogames with friends!
           </p>
           <div className="mt-6 flex gap-6">
             {/* <SocialLink
@@ -294,9 +293,20 @@ export default function Home({ articles }) {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
+            <PagePreview
+              key="projects"
+              header="Projects"
+              link="/projects"
+              title="The various projects I've worked on"
+              description="Right now I'm trying to be a web developer, so all of the projects I'm proud of are full stack web applications. I'm always looking for new projects to work on, so feel free to reach out if you have any ideas!"
+            />
+            <PagePreview
+              key="favorites"
+              header="Favoites"
+              link="/favorites"
+              title="A list of some of my favorite things"
+              description="This is a non-exhaustive list of some of my favorite things from activities, to podcasts, to places, to food, and more!"
+            />
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             {/* <Newsletter /> */}
@@ -308,16 +318,16 @@ export default function Home({ articles }) {
   )
 }
 
-export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
-  }
+// export async function getStaticProps() {
+//   if (process.env.NODE_ENV === 'production') {
+//     await generateRssFeed()
+//   }
 
-  return {
-    props: {
-      articles: (await getAllArticles())
-        .slice(0, 4)
-        .map(({ component, ...meta }) => meta),
-    },
-  }
-}
+//   return {
+//     props: {
+//       articles: (await getAllArticles())
+//         .slice(0, 4)
+//         .map(({ component, ...meta }) => meta),
+//     },
+//   }
+// }
