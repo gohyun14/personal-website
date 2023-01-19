@@ -9,7 +9,7 @@ import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 
-const projects = [
+const resume = [
   {
     name: 'Planetaria',
     description:
@@ -58,14 +58,14 @@ function LinkIcon(props) {
   )
 }
 
-export default function Projects() {
+export default function Resume() {
   return (
     <>
       <Head>
-        <title>Projects - Gabriel Hyun</title>
+        <title>Projects - Spencer Sharp</title>
         <meta
           name="description"
-          content="Projects I've created on my web dev journey."
+          content="A list of some of my favorite things."
         />
       </Head>
       <SimpleLayout
