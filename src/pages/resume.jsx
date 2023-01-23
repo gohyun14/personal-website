@@ -198,16 +198,15 @@ export default function Uses() {
                   fetching), PlanetScaleDB MySQL database, Prisma ORM
                 </li>
                 <li>
-                  This is a project based on Lens Protocol, a decentralized
-                  social graph. My idea was to recreate the Twitter List feature
-                  for Lens users.
-                </li>
-                <li>
-                  <span className="font-semibold">Application features:</span>{' '}
-                  login with wallet or as test user, create a list of users to
-                  follow, view a list&apos;s page, manage your lists/your
-                  followed lists, search lists created by other users, follow
-                  lists created by other users.
+                  <span className="font-semibold">
+                    Application features (planned):
+                  </span>{' '}
+                  login with Google or with Sign in With Ethereum,
+                  add/edit/delete stock and crypto transactions (buys/sells) to
+                  track your portfolio, visualize and track asset and portfolio
+                  current/historical performance, visualize performance against
+                  other assets such as S&P 500/Bitcoin, and probably more cool
+                  features as I think of them
                 </li>
                 <li>
                   <span className="font-semibold">Links: </span>
@@ -402,7 +401,7 @@ export default function Uses() {
                   transactions
                 </li>
                 <li>
-                  Learned in depth Solidity syntax and proficiency, smart
+                  Learned intermediate Solidity syntax and proficiency, smart
                   contract theory/development/security/testing/deployment
                 </li>
                 <li>
