@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -11,39 +12,39 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
-    description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+    name: 'Portfolio App',
+    description: 'Track and visualize your stock/crypto portfolio performance.',
+    link: {
+      href: 'https://portfolio-app-beta-six.vercel.app/',
+      label: 'portfolio-app-beta-six.vercel.app',
+    },
+    color: 'bg-green-500',
   },
   {
-    name: 'Animaginary',
+    name: 'LensLists',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      "Create a list of your favorite Lens accounts to follow, and view/follow others' lists.",
+    link: { href: 'https://www.lenslists.xyz/', label: 'lenslists.xyz' },
+    color: 'bg-indigo-500',
   },
   {
-    name: 'HelioStream',
+    name: 'Crypto App',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      "Search a wallet's NFTs, mint/stake custom NFTs for token rewards, send/swap multiple tokens.",
+    link: {
+      href: 'https://dnft-interface.vercel.app/',
+      label: 'dnft-interface.vercel.app',
+    },
+    color: 'bg-sky-500',
   },
   {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+    name: 'Great Quotes',
+    description: "Post your favorite quotes, and comment on others' quotes.",
+    link: {
+      href: 'https://quotes-site.vercel.app/?sort=newest',
+      label: 'quotes-site.vercel.app',
+    },
+    color: 'bg-amber-500',
   },
 ]
 
@@ -58,6 +59,30 @@ function LinkIcon(props) {
   )
 }
 
+function ProjectCard({ name, description, link, color }) {
+  return (
+    <li className="group relative flex flex-col items-start">
+      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+        <div className={`h-8 w-8 rounded-full ${color}`} unoptimized />
+      </div>
+      <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+        <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+        <Link href={link.href} target="_blank" rel="noreferrer">
+          <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+          <span className="relative z-10">{name}</span>
+        </Link>
+      </h2>
+      <div className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        {description}
+      </div>
+      <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+        <LinkIcon className="h-6 w-6 flex-none" />
+        <span className="ml-2">{link.label}</span>
+      </p>
+    </li>
+  )
+}
+
 export default function Projects() {
   return (
     <>
@@ -69,34 +94,23 @@ export default function Projects() {
         />
       </Head>
       <SimpleLayout
-        title="This page is currently a work in progress..."
-        intro="Check back soon!"
+        title="Projects I've made on my web dev journey."
+        intro="Right now I'm trying to be a web developer (either frontend or fullstack), so all of the projects I'm proud of are web applications. I'm constantly trying to learn, so I'm constantly starting new projects to incorporate new technologies I want to learn, or to improve my overall web dev skills! (All of the project github repos can be found on my Resume page)"
       >
-        {/* <ul
+        <ul
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project) => (
-            <Card as="li" key={project.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image
-                  src={project.logo}
-                  alt=""
-                  className="h-8 w-8"
-                  unoptimized
-                />
-              </div>
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
-              </h2>
-              <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
-            </Card>
+            <ProjectCard
+              key={project.name}
+              name={project.name}
+              link={project.link}
+              description={project.description}
+              color={project.color}
+            />
           ))}
-        </ul> */}
+        </ul>
       </SimpleLayout>
     </>
   )
