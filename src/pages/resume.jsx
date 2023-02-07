@@ -187,12 +187,13 @@ export default function Uses() {
                 <li>
                   <span className="font-semibold">Main Tech Used: </span>
                   Typescript, React/NextJS, TailwindCSS, React Query, Prisma,
-                  tRPC, NextAuth
+                  tRPC, NextAuth, Framer Motion
                 </li>
                 <li>
                   Fullstack web app, hosted on Vercel <br />
                   <span className="underline">Frontend:</span> Typescript,
-                  React/NextJS, TailwindCSS, Jotai (global state) <br />
+                  React/NextJS, TailwindCSS, Jotai (global state), Framer Motion
+                  (animations) <br />
                   <span className="underline">Backend:</span> NextAuth, tRPC API
                   endpoints using NextJS API routes, React Query (data
                   fetching), PlanetScaleDB MySQL database, Prisma ORM
@@ -431,6 +432,7 @@ export default function Uses() {
                 <li>React Query</li>
                 <li>React Test Utils</li>
                 <li>Jest</li>
+                <li>Framer Motion</li>
               </ul>
             </Tool>
             <Tool title="Blockchain">
