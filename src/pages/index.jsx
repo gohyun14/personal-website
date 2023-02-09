@@ -262,9 +262,9 @@ export default function Home({ articles }) {
             Software engineer, gamer, foodie, and podcast enthusiast
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Gabe, a software enginee focusing in web development based
-            in Silicon Valley. I&apos;m currently looking for work and working
-            on my own personal projects. In my spare time I enjoy exercising,
+            I&apos;m Gabe, a software engineer from Silicon Valley focusing on
+            web development. I&apos;m currently looking for work and working on
+            my own personal projects. In my spare time I enjoy exercising,
             traveling, eating, listening to podcasts about technology and
             finance, and playing videogames with friends!
           </p>

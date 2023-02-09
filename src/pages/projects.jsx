@@ -95,7 +95,7 @@ export default function Projects() {
       </Head>
       <SimpleLayout
         title="Projects I've made on my web dev journey."
-        intro="Right now I'm trying to be a web developer (either frontend or fullstack), so all of the projects I'm proud of are web applications. I'm constantly trying to learn, so I'm constantly starting new projects to incorporate new technologies I want to learn, or to improve my overall web dev skills! (All of the project github repos can be found on my Resume page)"
+        intro="Right now I'm trying to be a web developer (either frontend or fullstack), so all of the projects I'm proud of are web applications. I'm constantly trying to learn, so I'm always starting new projects to incorporate new technologies I want to learn, or to improve my overall web dev skills! (All of the project github repos can be found on my Resume page)"
       >
         <ul
           role="list"
