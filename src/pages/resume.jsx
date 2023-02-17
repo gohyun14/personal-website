@@ -103,7 +103,7 @@ export default function Uses() {
             </Tool>
           </ToolsSection>
           <ToolsSection title="Work Experience">
-            <Tool title="SWE Intern (Frontend) - Automation Anywhere">
+            <Tool title="Frontend Software Engineer, Intern - Automation Anywhere">
               <p className="-mt-3 text-xs font-light sm:-mt-4">
                 Jun - Sept 2020, Jun - Dec 2021, Jun 2022 - Dec 2022
               </p>
